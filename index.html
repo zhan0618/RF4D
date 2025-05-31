@@ -153,6 +153,32 @@ Outdoor Dynamic Scenes</h1>
 </section>
 <!-- End teaser video -->
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+  
+      <div class="columns is-centered">
+      <div class="column is-full-width">
+          <h2 class="title is-3">System Architecture</h2>
+          <img src="static/images/fig2.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+
+          <div class="content has-text-justified">
+            <p>
+              mmDiff proposes diffusion-based pose estimation with a conditional diffusion model, 
+              using mmWave radar information as conditions. $k \in [0..K]$ denotes the diffusion step.
+               Four modules are proposed to extract more reliable guidance, addressing PCs' noise and 
+               inconsistency respectively: GRC and LRC first extract more robust global-local radar features, 
+               $C^{glo}$ and $C^{loc}$; SLC and TMC then extract consistent human structure and motion 
+               patterns, $C^{tem}$ and $C^{lim}$.
+              </p>
+          </div>
+      </div>
+      </div>
+  </div>
+</section>
+
   <!-- Paper poster -->
 <section class="hero is-small is-light">
   <div class="hero-body">
