@@ -162,9 +162,8 @@ Outdoor Dynamic Scenes</h1>
       <iframe  src="static/images/fig2.png" width="80%">
           </iframe>
       <h2 class="subtitle has-text-centered">
-       
+       Overview of the proposed RF4D framework. Given a 3D query point (x,y,z) at time t and view direction d, RF4D first predicts two radar-specific physical quantities: occupancy $\alpha$ and radar cross section (RCS) $\sigma$, using neural radar fields. The predicted occupancy reflects whether the point is physically occupied, while the RCS describes its reflectivity. Then these quantities are combined via our proposed radar-specific power rendering to estimate the received radar power. During training, besides the supervision of ground truth radar measurements, the feature-level flow module promotes temporal consistency of occupancy by modeling latent feature changes across adjacent frames.
       </h2>
-        To do
       </div>
     </div>
   </section>
@@ -180,6 +179,22 @@ Outdoor Dynamic Scenes</h1>
           </iframe>
       <h2 class="subtitle has-text-centered">
       Qualitative comparison of novel-view radar measurement synthesis (top) and occupancy estimation (bottom) across different methods on the RobotCar dataset. Ground truth occupancy is derived from LiDAR point clouds. Our method accurately reconstructs the radar measurements with clear structure and minimal artifacts, while RadarFields introduces noise and blurring, especially around dynamic objects. D-NeRF and DyNeRF, which rely on volume rendering, fail to recover meaningful scene structure. In contrast, our predictions are clean and closely matching the ground truth.
+      </h2>
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+  <!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Qualitative comparison</h2>
+
+      <iframe  src="static/images/appendix_3d.png" width="80%">
+          </iframe>
+      <h2 class="subtitle has-text-centered">
+      3D voxel grid reconstruction from radar measurements. Our method reconstructs full 3D occupancy geometry from sparse and low-resolution radar data, capturing both moving vehicles and static objects present in the scene. LiDAR point clouds axsnd scene images are provided for reference only.
       </h2>
       </div>
     </div>
