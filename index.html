@@ -53,7 +53,8 @@ Outdoor Dynamic Scenes</title>
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">RF4D:Neural Radar Fields for Novel View Synthesis in
+Outdoor Dynamic Scenes</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -77,7 +78,7 @@ Outdoor Dynamic Scenes</title>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/zhan0618/RF4D_code" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -111,11 +112,11 @@ Outdoor Dynamic Scenes</title>
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/demo.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Our RF4D is able to reconstruct the 3D geometry of a scene from radar measurements. LiDAR point clouds are also provided for reference purposes.
       </h2>
     </div>
   </div>
@@ -130,7 +131,7 @@ Outdoor Dynamic Scenes</title>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Neural fields (NFs) have demonstrated remarkable performance in scene reconstruction, powering various tasks such as novel view synthesis. However, existing NF methods relying on RGB or LiDAR inputs often exhibit severe fragility to adverse weather, particularly when applied in outdoor scenarios like autonomous driving. In contrast, millimeter-wave radar is inherently robust to environmental changes,  while unfortunately, its integration with NFs remains largely underexplored. Besides, as outdoor driving scenarios frequently involve moving objects, making spatiotemporal modeling essential for temporally consistent novel view synthesis. To this end, we introduce RF4D, a radar-based neural field framework specifically designed for novel view synthesis in outdoor dynamic scenes. RF4D explicitly incorporates temporal information into its representation, significantly enhancing its capability to model moving objects. We further introduce a feature-level flow module that predicts latent temporal offsets between adjacent frames, enforcing temporal coherence in dynamic scene modeling. Moreover, we propose a radar-specific power rendering formulation closely aligned with radar sensing physics, improving synthesis accuracy and interoperability. Extensive experiments on public radar datasets demonstrate the superior performance of RF4D in terms of radar measurement synthesis quality and occupancy estimation accuracy, achieving especially pronounced improvements in dynamic outdoor scenarios.
           </p>
         </div>
       </div>
@@ -147,7 +148,7 @@ Outdoor Dynamic Scenes</title>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/fig1_3.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
