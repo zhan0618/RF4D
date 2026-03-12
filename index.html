@@ -110,14 +110,13 @@ Outdoor Dynamic Scenes</h1>
       <div class="columns is-centered">
       <div class="column is-full-width">
           <h2 class="title is-3">Motivation</h2>
-          <img src="static/images/fig1.png"
+          <img src="static/images/fig1_v2.png"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
 
           <div class="content has-text-justified">
             <p>
-               (a) Comparison of radar view synthesis results for a dynamic scene with a moving vehicle (red box). Our method successfully renders the moving object, while Radar Fields fails to recover it. (b) Predicted occupancy and reflectance (Radar Fields) versus occupancy and RCS (ours). Our predictions follow radar physics, where high occupancy corresponds to strong RCS, while Radar Fields fails to maintain such consistency between occupancy and reflectance.
-              </p>
+               (a) Comparison of radar view synthesis for a dynamic scene with a moving vehicle (orange box). RF4D successfully renders the moving object, whereas Radar Fields fails to recover it.
           </div>
       </div>
       </div>
@@ -133,7 +132,7 @@ Outdoor Dynamic Scenes</h1>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Neural fields (NFs) have demonstrated remarkable performance in scene reconstruction, powering various tasks such as novel view synthesis. However, existing NF methods relying on RGB or LiDAR inputs often exhibit severe fragility to adverse weather, particularly when applied in outdoor scenarios like autonomous driving. In contrast, millimeter-wave radar is inherently robust to environmental changes,  while unfortunately, its integration with NFs remains largely underexplored. Besides, as outdoor driving scenarios frequently involve moving objects, making spatiotemporal modeling essential for temporally consistent novel view synthesis. To this end, we introduce RF4D, a radar-based neural field framework specifically designed for novel view synthesis in outdoor dynamic scenes. RF4D explicitly incorporates temporal information into its representation, significantly enhancing its capability to model moving objects. We further introduce a feature-level flow module that predicts latent temporal offsets between adjacent frames, enforcing temporal coherence in dynamic scene modeling. Moreover, we propose a radar-specific power rendering formulation closely aligned with radar sensing physics, improving synthesis accuracy and interoperability. Extensive experiments on public radar datasets demonstrate the superior performance of RF4D in terms of radar measurement synthesis quality and occupancy estimation accuracy, achieving especially pronounced improvements in dynamic outdoor scenarios.
+            Neural fields (NFs) have achieved remarkable success in scene reconstruction and novel view synthesis. However, existing NF approaches that rely on RGB or LiDAR inputs often struggle under adverse weather conditions, limiting their robustness in real-world outdoor environments such as autonomous driving. In contrast, millimeter-wave radar is inherently resilient to environmental variations, yet its integration with NFs remains largely underexplored. Moreover, outdoor driving scenes frequently involve dynamic objects, making spatiotemporal modeling crucial for temporally consistent novel view synthesis. To address these challenges, we present RF4D, a radar-based neural field framework tailored for novel view synthesis in outdoor dynamic scenes. RF4D explicitly incorporates temporal information into its representation, enabling more accurate modeling of object motion. A dedicated scene flow module further predicts temporal offsets between adjacent frames, enforcing temporal occupancy coherence during dynamic scene reconstruction. Moreover, we propose a radar-specific power rendering formulation grounded in radar sensing physics, improving both synthesis accuracy and interpretability. Extensive experiments on public radar datasets demonstrate that RF4D substantially outperforms existing methods in radar measurement synthesis and occupancy estimation accuracy, with particularly strong gains in dynamic outdoor environments.
           </p>
         </div>
       </div>
@@ -168,13 +167,13 @@ Outdoor Dynamic Scenes</h1>
       <div class="columns is-centered">
       <div class="column is-full-width">
           <h2 class="title is-3">Method</h2>
-          <img src="static/images/fig2.png"
+          <img src="static/images/method_v2.pdf"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
 
           <div class="content has-text-justified">
             <p>
-               Overview of the proposed RF4D framework. Given a 3D query point $(x,y,z)$ at time $t$ and view direction $d$, RF4D first predicts two radar-specific physical quantities: occupancy $\alpha$ and radar cross section (RCS) $\sigma$, using neural radar fields. The predicted occupancy reflects whether the point is physically occupied, while the RCS describes its reflectivity. Then these quantities are combined via our proposed radar-specific power rendering to estimate the received radar power. During training, besides the supervision of ground truth radar measurements, the feature-level flow module promotes temporal consistency of occupancy by modeling latent feature changes across adjacent frames.
+              Overview of the proposed RF4D framework. Given a 3D query point $x$ at time $t$ and view direction $\mathbf{d}$, RF4D first predicts two radar-specific physical quantities: occupancy $\alpha$ and radar cross-section (RCS) $\sigma$, using neural radar fields. The occupancy $\alpha$ indicates whether the point is physically occupied, and the RCS $\sigma$ represents its reflectivity. These quantities are combined through the radar-specific power rendering to estimate the received radar power. During training, the rendered power is supervised by ground-truth radar measurements, and the scene flow module enforces temporal consistency by predicting motion offsets and warping points to adjacent frames to regularize occupancy over time.
               </p>
           </div>
       </div>
@@ -188,13 +187,13 @@ Outdoor Dynamic Scenes</h1>
       <div class="columns is-centered">
       <div class="column is-full-width">
           <h2 class="title is-3">Qualitative comparison</h2>
-          <img src="static/images/fig4_2.png"
+          <img src="static/images/fig4_v3.pdf"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
 
           <div class="content has-text-justified">
             <p>
-              Qualitative comparison of novel-view radar measurement synthesis (top) and occupancy estimation (bottom) across different methods on the RobotCar dataset. Ground truth occupancy is derived from LiDAR point clouds. Our method accurately reconstructs the radar measurements with clear structure and minimal artifacts, while RadarFields introduces noise and blurring, especially around dynamic objects. D-NeRF and DyNeRF, which rely on volume rendering, fail to recover meaningful scene structure. In contrast, our predictions are clean and closely matching the ground truth.
+              Radar robustness and generalization across weather conditions. While LiDAR point clouds degrade severely in snow, radar measurements remain stable. RF4D accurately reconstructs radar measurements, maintaining consistent performance across different weather conditions.
               </p>
           </div>
       </div>
